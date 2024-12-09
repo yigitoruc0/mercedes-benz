@@ -1,0 +1,151 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Arka plan rengi */
+}
+
+/* Header Ayarları */
+header {
+    background-color: #333;
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo ve Başlık Ayarları */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px; /* Logonun genişliği */
+    height: auto; /* Oranını korur */
+    margin-right: 10px;
+}
+
+.site-title {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menü Ayarları */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative; /* Dropdown için gerekli */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Dropdown Ayarları */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Hover edildiğinde dropdown görünür */
+}
+
+/* Responsive Ayarları */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Arka plan rengi */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Tüm ekran yüksekliğini kapsar */
+}
+
+/* İçerik Konteyneri */
+#content {
+    flex: 1; /* İçeriği genişletir, footer'ı aşağı iter */
+    padding: 20px;
+}
+
+/* Footer Ayarları */
+#footer {
+    background-color: #2b2727; /* Hafif gri arka plan */
+    padding: 10px 0; /* Üst ve alt boşluk */
+    font-size: 14px;
+    color: #ffffff; /* Koyu gri yazı rengi */
+    text-align: center; /* Yazıyı ortalar */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Hafif üst gölge */
+}
+.site-title-link {
+    text-decoration: none; /* Altı çizgiyi kaldırır */
+    display: flex;
+    align-items: center; /* Logo ve yazıyı hizalar */
+    color: white; /* Yazının rengini beyaz yapar */
+}
+
+.site-title-link:hover {
+    opacity: 0.8; /* Üzerine gelindiğinde hafif saydamlık efekti */
+}
