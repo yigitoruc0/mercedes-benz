@@ -1,0 +1,190 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Öğeler arasında boşluk */
+    text-decoration: none;
+    color: white;
+}
+
+.logo-container a {
+    text-decoration: none; /* Altı çizgiyi kaldırır */
+    color: white; /* Yazıyı beyaz yapar */
+    display: flex;
+    align-items: center; /* Logoyu ve yazıyı hizalar */
+    gap: 10px; /* Logo ve yazı arasına boşluk ekler */
+}
+
+.logo-container:hover {
+    opacity: 0.8; /* Hover durumunda opaklık */
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menü Ayarları */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Sağ tarafa hizalar */
+    flex: 1; /* Sağ tarafa genişlik verir */
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative; /* Dropdown için gerekli */
+}
+
+.nav-links a {
+    text-decoration: none; /* Altı çizgiyi kaldırır */
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    border-radius: 0; /* Yuvarlak köşe kaldırıldı */
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 0; /* Hover durumunda da yuvarlak köşe kaldırıldı */
+}
+
+/* Ok İşareti Stili */
+.arrow {
+    margin-left: 5px; /* Ok işaretini yazıdan ayırır */
+    font-size: 12px; /* Ok işaretinin boyutunu ayarlar */
+    transition: transform 0.3s ease; /* Animasyon ekler */
+}
+
+/* Hover Durumunda Ok İşareti */
+.dropdown:hover .arrow {
+    transform: rotate(180deg); /* Hover olduğunda oku yukarı çevirir */
+}
+
+/* Dropdown Ayarları */
+.dropdown {
+    position: relative; /* Dropdown menüsünü menü öğesiyle ilişkilendirir */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Dropdown menüsünü diğer öğelerin üstünde tutar */
+    min-width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    left: auto; /* Sol hizalamayı kaldırır */
+    right: 0; /* Sağ hizalar */
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Hover edildiğinde dropdown görünür */
+}
+
+/* İçerik */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Logolar Galerisi */
+.logos-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.logo-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-item img {
+    width: 150px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-item img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-period {
+    display: none;
+    font-size: 16px;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-item:hover .logo-period {
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    background-color: #2b2727;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}

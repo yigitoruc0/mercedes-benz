@@ -1,0 +1,208 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo-container a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container:hover {
+    opacity: 0.8;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menü Ayarları */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+}
+
+/* Ok İşareti Stili */
+.arrow {
+    margin-left: 5px;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    min-width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    left: auto;
+    right: 0;
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* İçerik */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Modeller Galerisi */
+.models-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.model-item {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Büyütme animasyonu */
+}
+
+.model-item img {
+    width: 200px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.model-item:hover img {
+    transform: scale(1.6); /* Görselin %60 büyümesi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Metin Kutusu */
+.model-description {
+    position: absolute;
+    top: 50%;
+    left: 120%; /* Kutu görselin biraz dışına kayacak şekilde */
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    width: 250px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, visibility 0.3s ease, left 0.3s ease;
+}
+
+.model-item:hover .model-description {
+    opacity: 1;
+    visibility: visible;
+    left: 120%; /* Kutu tam olarak sağa kayacak şekilde */
+}
+
+/* Model Adı */
+.model-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Model Metni */
+.model-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background-color: #2b2727;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}

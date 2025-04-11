@@ -1,0 +1,172 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Ayarları */
+header {
+    background-color: #333;
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo ve Başlık */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.site-title {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.site-title-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.site-title-link:hover {
+    opacity: 0.8;
+}
+
+/* Menü Ayarları */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Sağ tarafa hizalar */
+    flex: 1; /* Sağ tarafa genişlik verir */
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative; /* Dropdown için gerekli */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    border-radius: 0; /* Yuvarlak köşe kaldırıldı */
+}
+
+.nav-links a:hover {
+    background-color: #575757;
+    border-radius: 0; /* Hover durumunda da yuvarlak köşe kaldırıldı */
+}
+
+/* Ok İşareti Stili */
+.arrow {
+    margin-left: 5px; /* Ok işaretini yazıdan ayırır */
+    font-size: 12px; /* Ok işaretinin boyutunu ayarlar */
+    transition: transform 0.3s ease; /* Animasyon ekler */
+}
+
+/* Hover Durumunda Ok İşareti */
+.dropdown:hover .arrow {
+    transform: rotate(180deg); /* Hover olduğunda oku yukarı çevirir */
+}
+
+/* Dropdown Ayarları */
+.dropdown {
+    position: relative; /* Dropdown menüsünü menü öğesiyle ilişkilendirir */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Dropdown menüsünü diğer öğelerin üstünde tutar */
+    min-width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    left: auto; /* Sol hizalamayı kaldırır */
+    right: 0; /* Sağ hizalar */
+}
+
+.dropdown-content a {
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f4f4f4;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Hover edildiğinde dropdown görünür */
+}
+
+/* İçerik Konteyneri */
+#content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #2b2727;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: left;
+    }
+}

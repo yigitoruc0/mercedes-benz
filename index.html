@@ -1,36 +1,96 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercedes Benz</title>
+    <title>Mercedes Benz - About</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo-container">
                 <a href="index.html" class="site-title-link">
-                <img src="logo.svg" alt="Mercedes Logo" class="logo-img">
-                <h1 class="site-title">Mercedes Benz</h1>
-            </a>
+                    <img src="logo.svg" alt="Mercedes Logo" class="logo-img">
+                    <h1 class="site-title">Mercedes Benz</h1>
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#communication.html">Communication</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="about.html">About <span class="arrow">&#9662;</span></a>
+                    <ul class="dropdown-content"> 
+                        <li><a href="logos.html">Mercedes logos</a></li>   
+                        <li><a href="technology and innovation.html">Technology and Innovation</a></li>
+                        <li><a href="founders.html">Founders</a></li>
+                    </ul>
+                </li> 
+                <li><a href="models.html">Models</a></li>  
             </ul>
         </nav>
     </header>
 
-    <!-- İçerik Alanı -->
-    <div id="content">
-        
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Mercedes Benz - The Best or Nothing</h2>
+            <p>Discover the future of automotive excellence.</p>
+            <a href="models.html" class="btn-primary">Explore Models</a>
+        </div>
+        <div class="model-links">
+            <div class="model-link">
+                <img src="img/model_1.jpg" alt="Mercedes-Benz C-Class">
+                <h3>Mercedes-Benz C-Class</h3>
+            </div>
+            <div class="model-link">
+                <img src="img/model_2.jpg" alt="Mercedes-Benz E-Class">
+                <h3>Mercedes-Benz E-Class</h3>
+            </div>
+            <div class="model-link">
+                <img src="img/model_3.jpg" alt="Mercedes-Benz S-Class">
+                <h3>Mercedes-Benz S-Class</h3>
+            </div>
+            <div class="model-link">
+                <img src="img/model_4.jpg" alt="Mercedes-Benz G-Class">
+                <h3>Mercedes-Benz G-Class</h3>
+            </div>
+            <div class="model-link">
+                <img src="img/model_5.jpg" alt="Mercedes-Benz A-Class">
+                <h3>Mercedes-Benz A-Class</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-cards" id="testimonial-cards">
+            <!-- Yeni yorumlar buraya eklenecek -->
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="message-form">
+            <input type="text" name="name" id="name" placeholder="Your Name" required>
+            <input type="email" name="email" id="email" placeholder="Your Email" required>
+            <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <div id="map">
+        <h2 style="text-align: center;">Mercedes-Benz Main Building</h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999998473566!2d9.181636315674438!3d48.782318079279534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799db4a0c4d5b6b%3A0x5ad76ab0b8a7db8b!2sMercedes-Benz%20Museum!5e0!3m2!1str!2str!4v1614091923345!5m2!1str!2str"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <!-- Footer -->
     <div id="footer">
         <p>Copyright © Mercedes-Benz</p>
     </div>
+
+    <!-- JavaScript dosyasını dahil et -->
+    <script src="script.js"></script>
 </body>
 </html>

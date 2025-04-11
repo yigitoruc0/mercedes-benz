@@ -1,0 +1,155 @@
+/* Sayfa genel düzeni */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
+
+/* Header ve Navigation */
+header {
+    background-color: #000;
+    padding: 10px 0;
+}
+
+nav .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+nav .logo-img {
+    width: 50px;
+    height: auto;
+}
+
+nav .site-title {
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav .nav-links li {
+    margin: 0 15px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Technology and Innovation Section */
+#technology-innovation {
+    text-align: left;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: flex-start; /* Yatayda ortalar */
+    justify-content: space-between; /* Metin ve görseli yan yana hizalar */
+}
+
+#technology-innovation h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    flex: 1; /* Metnin sağa kaymasını sağlar */
+}
+
+#technology-innovation p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+    flex: 1;
+}
+
+/* Konteyneri oluşturuyoruz */
+.technology-image-container {
+    width: 300px; /* Görselin genişliği */
+    height: 200px; /* Görselin yüksekliği */
+    background-image: url('mercedes-benz-inovation.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-right: 0; /* Sağdaki boşluğu sıfırlıyoruz */
+    flex-shrink: 0; /* Görselin küçülmesini engeller */
+    float: right; /* Görseli sağa yaslar */
+}
+
+/* Innovation Areas */
+.innovation-areas {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.innovation-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: left;
+}
+
+.innovation-item h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.innovation-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.innovation-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+#video-section {
+    display: flex;
+    justify-content: flex-end; /* Videoyu sağa hizalar */
+    align-items: center; /* Dikeyde ortalar */
+    padding: 20px;
+    margin-top: 20px;
+}
+
+iframe {
+    margin-left: 20px; /* Videonun sol tarafında boşluk bırakır */
+    width: 560px;
+    height: 315px;
+}
