@@ -1,25 +1,83 @@
-// script.js
 document.getElementById('message-form').addEventListener('submit', function(event) {
-    event.preventDefault();  // Formun normal şekilde submit olmasını engeller
+    event.preventDefault();
 
-    // Kullanıcıdan gelen bilgileri alıyoruz
-    var name = document.getElementById('name').value;
-    var message = document.getElementById('message').value;
+    var name = document.getElementById('name').value.trim();
+    var message = document.getElementById('message').value.trim();
 
-    // Yeni yorum (testimonial) elemanını oluşturuyoruz
-    var newTestimonial = document.createElement('div');
-    newTestimonial.classList.add('testimonial-card');
-    newTestimonial.innerHTML = `<p>"${message}"</p><span>- ${name}</span>`;
+    if (name === '' || message === '') {
+        alert('Lütfen isim ve mesaj alanlarını doldurun.');
+        return;
+    }
 
-    // Testimonialları göstereceğimiz alanı buluyoruz
-    var testimonialContainer = document.getElementById('testimonial-cards');
-    
-    // Testimonialları temizliyoruz (yeni mesaj eklemek için önceki mesajı siliyoruz)
-    testimonialContainer.innerHTML = '';  
-    
-    // Yeni testimonial'ı ekliyoruz
-    testimonialContainer.appendChild(newTestimonial);  
+    var testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
 
-    // Formu sıfırlıyoruz
-    document.getElementById('message-form').reset();  
+    var newTestimonial = { name: name, message: message };
+
+    testimonials.push(newTestimonial);
+    localStorage.setItem('testimonials', JSON.stringify(testimonials));
+
+    renderTestimonials();
+    this.reset();
+});
+
+function renderTestimonials() {
+    var testimonialContainer = document.querySelector('.testimonial-cards');
+    testimonialContainer.innerHTML = '';
+
+    var testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+
+    testimonials.forEach(function(testimonial) {
+        var div = document.createElement('div');
+        div.classList.add('testimonial-card');
+        div.innerHTML = `
+            <p>"${testimonial.message}"</p>
+            <span>- ${testimonial.name}</span>
+            <button class="delete-btn">
+                <i class="fas fa-trash"></i>
+            </button>
+        `;
+
+        div.querySelector('.delete-btn').addEventListener('click', function() {
+            testimonialContainer.removeChild(div);
+            removeFromLocalStorage(testimonial.message, testimonial.name);
+        });
+
+        testimonialContainer.appendChild(div);
+    });
+}
+
+function removeFromLocalStorage(message, name) {
+    var testimonials = JSON.parse(localStorage.getItem('testimonials')) || [];
+    var updated = testimonials.filter(t => !(t.message === message && t.name === name));
+    localStorage.setItem('testimonials', JSON.stringify(updated));
+}
+
+window.onload = renderTestimonials;
+// Mouse drag ile yatay kaydırma
+const testimonialContainer = document.querySelector('.testimonial-cards');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+testimonialContainer.addEventListener('mousedown', (e) => {
+    isDown = true;
+    testimonialContainer.classList.add('active');
+    startX = e.pageX - testimonialContainer.offsetLeft;
+    scrollLeft = testimonialContainer.scrollLeft;
+});
+testimonialContainer.addEventListener('mouseleave', () => {
+    isDown = false;
+    testimonialContainer.classList.remove('active');
+});
+testimonialContainer.addEventListener('mouseup', () => {
+    isDown = false;
+    testimonialContainer.classList.remove('active');
+});
+testimonialContainer.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - testimonialContainer.offsetLeft;
+    const walk = (x - startX) * 2; // Kaydırma hızı
+    testimonialContainer.scrollLeft = scrollLeft - walk;
 });
